@@ -1,0 +1,143 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #121212, #1f1f1f);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Asegura el orden vertical */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    max-width: 250px; /* Tamaño máximo del logo */
+    width: 60%;       /* Ancho flexible */
+    margin: 0 auto 20px; /* Centrado y con margen inferior */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #f4f4f4;
+}
+
+.recorder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+canvas#visualizer {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 200px; /* Altura base para pantallas grandes */
+    border-radius: 10px;
+    background-color: #111;
+    border: 2px solid #333;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Permite que los botones se reordenen */
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    min-width: 120px;
+    flex-grow: 1; /* Permite que los botones crezcan */
+    flex-basis: 120px; /* Base para el tamaño antes de crecer */
+}
+
+/* ... (los estilos de los botones :hover permanecen igual) ... */
+.record-btn:hover, .stop-btn:hover, .play-btn:hover, .download-btn:hover {
+    transform: scale(1.05);
+}
+.record-btn { background-color: #d32f2f; }
+.stop-btn { background-color: #555555; }
+.play-btn { background-color: #0d47a1; }
+.download-btn { background-color: #2e7d32; }
+
+
+.status {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+    flex-wrap: wrap; /* Permite que el timer pase abajo si no hay espacio */
+    gap: 10px;
+}
+
+#timer {
+    font-weight: bold;
+    color: #f4f4f4;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.8rem;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    border-radius: 10px;
+}
+
+/* Media Query para Teléfonos y Tablets */
+@media(max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Título más pequeño */
+    }
+
+    canvas#visualizer {
+        height: 150px; /* Visualizador más bajo en móviles */
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 12px 15px; /* Menos padding horizontal */
+        flex-basis: 100px;
+    }
+
+    .status {
+        flex-direction: column; /* Apila el estado y el timer */
+        align-items: center;
+        gap: 5px;
+    }
+}

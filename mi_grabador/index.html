@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grabadora de Voz con Visualización</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+       <img src="img/infocal.png" alt="Infocal Santa Cruz" class="logo">
+        <h1>Grabadora de Voz</h1>
+        
+        <div class="recorder-container">
+            <canvas id="visualizer"></canvas>
+            
+            <div class="controls">
+                <button id="recordBtn" class="btn record-btn">
+                    <span class="btn-text">Grabar</span>
+                </button>
+                <button id="stopBtn" class="btn stop-btn" disabled>
+                    <span class="btn-text">Detener</span>
+                </button>
+                <button id="playBtn" class="btn play-btn" disabled>
+                    <span class="btn-text">Reproducir</span>
+                </button>
+                <button id="downloadBtn" class="btn download-btn" disabled>
+                    <span class="btn-text">Descargar</span>
+                </button>
+            </div>
+            
+            <div class="status">
+                <span id="status">Listo para grabar</span>
+                <span id="timer">00:00</span>
+            </div>
+            
+            <div class="audio-container">
+                <audio id="audioPlayback" controls style="display: none;"></audio>
+            </div>
+            <footer class="footer">
+                <h3>Grabador de voz con visualización de onda | © 2025 - Todos los derechos reservados</h3>
+                <p>Autor: Est. Carlos Daniel Frances - Esta es una representación simplificada para propósitos educativos</p>
+        
+            </footer>
+        </div>    
+   
+    </div>
+        
+    <script src="script.js"></script>
+</body>
+</html>
